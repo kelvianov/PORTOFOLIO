@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+
+
+   <link rel="stylesheet" href="css/style.css?v=2" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/script.js"></script>
+
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+    
+    <header>
+        <a href="#" class="logo">Kelvianov Putra Kesuma.</a>
+        <ul class="navmenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text">
+            <h2>Hello I'm Kelvianov </h2>
+           <h3 class="typing-text"></h3>
+
+            <p>I'm a Software Engineer based in Bandung, and I am very passionate and dedicated to my work.</p>
+            <div class="home-btn">
+                <a href="#contact" class="btn">Contact Info</a>
+               <a href="cv/Kelvianov.pdf" class="btn" target="_blank">Download CV <i class="ph ph-read-cv-logo"></i></a>
+
+            </div>
+        </div>
+    </section>
+
+<section id="about">
+  <div class="about-container">
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p class="typewriter">
+      Hi, I'm <strong>Kelvianov Putra Kesuma</strong>, an 18-year-old software engineer from Bandung, Indonesia. I'm passionate about creativity and innovation, with a focus on front-end development and creating smooth, user-friendly designs.
+    </p>
+    <p class="typewriter">
+      I graduated from <strong>SMKN 13 Bandung</strong>, majoring in Software Engineering. Since then, I've focused on mastering front-end technologies, and I take pride in writing clean, efficient code.
+    </p>
+    <p class="typewriter">
+      When I'm not coding, I enjoy solving problems, keeping up with new technologies, and staying updated with the latest trends in web development.
+    </p>
+    <p class="typewriter">
+      If you're interested in collaborating, feel free to reach out and let's create something amazing together!
+    </p>
+  </div>
+    <div class="about-image">
+      <img src="img/ep.png" alt="Kelvianov Putra Kesuma" />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section id="skills">
+  <h2>Skills</h2>
+   <p>Skills I've mastered through real projects and constant learning</p>
+  <div class="skills-container">
+    <!-- Baris pertama -->
+    <div class="skill-card">
+      <i class="devicon-html5-plain colored"></i>
+      <span>HTML</span>
+    </div>
+    <div class="skill-card">
+      <i class="devicon-css3-plain colored"></i>
+      <span>CSS</span>
+    </div>
+    <div class="skill-card">
+      <i class="devicon-javascript-plain colored"></i>
+      <span>JavaScript</span>
+    </div>
+    
+
+    <!-- Baris kedua -->
+    <div class="skill-card">
+      <i class="devicon-php-plain colored"></i>
+      <span>PHP</span>
+    </div>
+    <div class="skill-card">
+      <img src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" class="skill-logo" alt="Laravel">
+      <span>Laravel</span>
+    </div>
+    
+
+    <!-- Baris ketiga: C++ dan SQL di tengah -->
+    <div class="skill-row-center">
+      <div class="skill-card">
+        <i class="devicon-cplusplus-plain colored"></i>
+        <span>C++</span>
+      </div>
+      <div class="skill-card">
+        <i class="devicon-mysql-plain colored"></i>
+        <span>SQL</span>
+      </div>
+     <div class="skill-card">
+    <i class="devicon-react-original colored"></i>
+    <span>React </span>
+</div>
+<div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg" alt="Canva Logo" style="width:40px; height:40px;">
+    <span>Canva</span>
+</div>
+<div class="skill-card">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/figma.svg" alt="Figma Logo" style="width:40px; height:40px;">
+    <span>Figma</span>
+</div>
+<div class="skill-card">
+  <i class="devicon-python-plain colored"></i>
+  <span>Python</span>
+</div>
+
+
+  </div>
+</section>
+
+
+
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <p>Here are some of the certificates I've achieved</p>
+
+    <div class="certificates-container">
+      <!-- Certificate 1 -->
+      <div class="certificate-card" style="background-image: url('img/sp1.jpg');" onclick="openModal('img/sp1.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="certificate-card" style="background-image: url('img/sp2.jpg');" onclick="openModal('img/sp2.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="certificate-card" style="background-image: url('img/sp3.jpg');" onclick="openModal('img/sp3.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="certificate-card" style="background-image: url('img/sp4.jpg');" onclick="openModal('img/sp4.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 5 -->
+      <div class="certificate-card" style="background-image: url('img/sp5.jpg');" onclick="openModal('img/sp5.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 6 -->
+      <div class="certificate-card" style="background-image: url('img/sp6.jpg');" onclick="openModal('img/sp6.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 7 -->
+      <div class="certificate-card" style="background-image: url('img/sp7.jpg');" onclick="openModal('img/sp7.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 8 -->
+      <div class="certificate-card" style="background-image: url('img/sp8.jpg');" onclick="openModal('img/sp8.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+
+      <!-- Certificate 9 -->
+      <div class="certificate-card" style="background-image: url('img/sp9.jpg');" onclick="openModal('img/sp9.jpg')">
+        <div class="certificate-overlay"></div>
+      </div>
+    </div>
+  </section>
+<!-- Modal Structure -->
+<div id="certificateModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg" />
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+  <a class="next" onclick="changeImage(1)">&#10095;</a>
+  <div id="caption"></div>
+
+</div>
+
+
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>If you want to collaborate or just say hi, feel free to reach out!</p>
+
+  <div class="contact-cards">
+    <!-- Email Card -->
+    <a href="https://mail.google.com/mail/?view=cm&to=kelvianov10@gmail.com" target="_blank" class="contact-card-link">
+      <div class="contact-card">
+        <i class="ph ph-envelope-simple"></i>
+        <h3>Email</h3>
+        <p>kelvianov10@gmail.com</p>
+      </div>
+    </a>
+
+    <!-- WhatsApp Card -->
+    <a href="https://wa.me/6282295029308?text=Halo%20Kelvianov%2C%20saya%20melihat%20portfolio%20anda%20dan%20ingin%20menghubungi%20anda." target="_blank" class="contact-card-link">
+      <div class="contact-card">
+        <i class="ph ph-whatsapp-logo"></i>
+        <h3>WhatsApp</h3>
+        <p>+62 822 9502 9308</p>
+      </div>
+    </a>
+
+    <!-- Location Card -->
+    <a href="https://www.instagram.com/kelvianov?igsh=MXAxZWNrenk3OXZ2ag%3D%3D&utm_source=qr " target="_blank" class="contact-card-link">
+      <div class="contact-card">
+      <i class="ph-bold ph-instagram-logo"></i>
+        <h3>Instagram</h3>
+        <p>@kelvianov</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+
+
+  <div class="socials-icons">
+  <a href="https://www.instagram.com/kelvianov" target="_blank">
+    <i class="ph-bold ph-instagram-logo"></i>
+  </a>    
+  <a href="https://www.linkedin.com/in/kelvianov-kesuma-4b2176364/"><i class="ph-bold ph-linkedin-logo"></i></a>
+  <a href="https://github.com/kelvianov"><i class="ph-bold ph-github-logo"></i></a>
+</div>
+
+    <div class="watermark">
+      © 2024 Kelvianov Putra Kesuma. All rights reserved.
+    </div>
+    <a href="#home" class="scroll-btn">Scroll down
+        <i class="ph-bold ph-arrow-bend-right-down"></i>
+    </a>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+  function getParticleCount() {
+    return window.innerWidth <= 768 ? 250: 400; // 100 di mobile, 400 di desktop
+  }
+
+  particlesJS("particles-js", {
+    particles: {
+      number: { 
+        value: getParticleCount(),
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      color: {
+        value: "#1e1e24"
+      },
+      shape: {
+        type: "circle",
+      },
+      opacity: {
+        value: 0.3,
+        random: true,
+      },
+      size: {
+        value: 4,
+        random: true,
+      },
+      move: {
+        enable: true,
+        speed: 1
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#1e1e24",
+        opacity: 0.4,
+        width: 1
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "grab"
+        }
+      }
+    },
+    retina_detect: true
+  });
+</script>
+
+
+    
+    
+    <script>
+  const typingText = document.querySelector('.typing-text');
+  const phrases = ["Front End Developerr", "UI Enthusiasts", "Creative Coder", "Graphic Designerr"];
+  let i = 0, j = 0, currentPhrase = [], isDeleting = false;
+
+  function loop() {
+    typingText.innerHTML = currentPhrase.join('');
+    if (!isDeleting && j <= phrases[i].length) {
+      currentPhrase.push(phrases[i][j++]);
+    } else if (isDeleting && j > 0) {
+      currentPhrase.pop();
+      j--;
+    }
+
+    if (j === phrases[i].length) {
+      isDeleting = true;
+      setTimeout(loop, 1000);
+      return;
+    }
+
+    if (j === 0 && isDeleting) {
+      isDeleting = false;
+      i = (i + 1) % phrases.length;
+    }
+
+    setTimeout(loop, isDeleting ? 60 : 100);
+  }
+  loop();
+</script>
+
+    <script>
+  window.addEventListener("load", () => {
+    const card = document.getElementById("welcomeCard");
+    card.classList.add("show");
+    setTimeout(() => {
+      card.classList.remove("show");
+    }, 4000); // tampil selama 4 detik
+  });
+</script>
+
+    <script src="js/script.js"></script>
+    <div class="welcome-card" id="welcomeCard">
+  <p>Haii, thanks for coming! </p>
+</div>
+
+<!-- Tombol buka modal -->
+<button id="openModalBtn" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 1rem 1.5rem;
+  background: #1e1e24;
+  color: #f7f7f2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+">Contact Me</button>
+
+<!-- Modal -->
+<div id="contactModal" class="contact-modal">
+  <div class="modal-card">
+    <span id="closeModalBtn" class="modal-close">&times;</span>
+    <h2 class="modal-title">Contact Me</h2>
+<form id="modalContactForm" action="https://formspree.io/f/mjkwlzqg" method="POST" novalidate>
+  <!-- semua isi tetap sama -->
+  <div class="form-group">
+    <input type="text" id="modalName" name="name" placeholder=" " required minlength="3" />
+    <label for="modalName">Name <span style="color:red;">*</span></label>
+    <small class="error-message"></small>
+  </div>
+
+  <div class="form-group">
+    <input type="email" id="modalEmail" name="email" placeholder=" " required />
+    <label for="modalEmail">Email <span style="color:red;">*</span></label>
+    <small class="error-message"></small>
+  </div>
+
+  <div class="form-group">
+    <textarea id="modalMessage" name="message" rows="4" placeholder=" " required minlength="10"></textarea>
+    <label for="modalMessage">Message <span style="color:red;">*</span></label>
+    <small class="error-message"></small>
+  </div>
+
+  <button type="submit">Send Message</button>
+  <div id="modalFormFeedback" role="alert"></div>
+</form>
+
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.querySelectorAll('section').forEach(section => {
+    gsap.from(section, {
+      opacity: 0,
+      y: 50,
+      duration: 3,
+      scrollTrigger: {
+        trigger: section,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+  
+</script>
+<script>
+  particlesJS.load('particles-js', 'particles.json');
+</script>
+
+<script>
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+</script>
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => window.scrollTo(0, 0), 0);
+  });
+</script>
+
+
+</body>
+</html>
