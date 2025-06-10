@@ -369,22 +369,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });//jangan di hapus
   }//jangan di hapus
   
-  // ================= HIDE CONTACT ME BUTTON ON CONTACT SECTION =================
+  // ================= HIDE CONTACT ME BUTTON ON CONTACT SECTION (MOBILE ONLY) =================
   const contactSection = document.getElementById('contact');
   const openModalBtn = document.getElementById('openModalBtn');
   if (contactSection && openModalBtn) {
     const contactBtnObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          openModalBtn.style.display = 'none';
+        // Only hide on mobile (768px and below)
+        if (window.innerWidth <= 768) {
+          if (entry.isIntersecting) {
+            openModalBtn.style.display = 'none';
+          } else {
+            openModalBtn.style.display = 'block';
+          }
         } else {
-          openModalBtn.style.display = '';
+          // On desktop, always show the button
+          openModalBtn.style.display = 'block';
         }
       });
     }, {
       threshold: 0.2 // 20% of contact section visible triggers hide
     });
+    
     contactBtnObserver.observe(contactSection);
+    
+    // Also listen for window resize to handle device orientation changes
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        // On desktop, always show button
+        openModalBtn.style.display = 'block';
+      } else {
+        // On mobile, check if we're in contact section
+        const rect = contactSection.getBoundingClientRect();
+        const isInContact = rect.top < window.innerHeight && rect.bottom > 0;
+        openModalBtn.style.display = isInContact ? 'none' : 'block';
+      }
+    });
   }
   
   }); // end DOMContentLoaded
