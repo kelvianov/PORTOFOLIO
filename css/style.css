@@ -438,7 +438,7 @@ html {
   transition: all 0.4s ease;
 
   width: 280px;
-  height: 200px;
+  aspect-ratio: 1/1; /* Memastikan card selalu square */
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -809,7 +809,7 @@ body {
 
 .skill-card:hover i {
   transform: scale(1.2);
-  color: white; /* Ubah warna ikon saat hover */
+  /* color: white; -- dihapus agar icon tetap warna asli */
 }
 
 .skill-card span {
@@ -1503,7 +1503,15 @@ html {
     justify-content: center;
     padding: 0 8rem;
     margin-bottom: 50rem;
+    margin-top: 5rem; /* Additional spacing from About section for mobile */
 }}
+
+/* Mobile spacing between About and Skills sections */
+@media (max-width: 768px) {
+    #about {
+        margin-bottom: 1rem; /* Add bottom margin to About section for mobile */
+    }
+}
 
 #skills h2 {
     font-size: 3rem;
@@ -1559,7 +1567,7 @@ html {
 .skill-card:hover i,
 .skill-card:hover .skill-logo {
     transform: scale(1.2);
-    color: white;
+    /* color: white; -- dihapus agar logo tetap warna asli */
 }
 
 .skill-logo {
@@ -2197,16 +2205,22 @@ body {
         font-size: 2.2rem;
     }
 
-     .certificates-container {
+    .certificates-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0;
+        gap: 1.5rem;
+        padding: 0 1rem;
         margin-top: 2rem;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    
     .certificate-card {
-    
+        width: 100%;
+        max-width: 90vw; /* Menggunakan 90% dari viewport width */
+        min-width: 280px; /* Minimal sama dengan desktop */
+        aspect-ratio: 1/1; /* Memastikan card selalu square */
+        height: auto;
         margin: 0 auto;
     }
 
@@ -2473,9 +2487,23 @@ body {
         font-size: 1.9rem;
     }
 
+    .certificates-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.5rem;
+        margin-top: 1.5rem;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .certificate-card {
-        max-width: 260px;
-        height: 160px;
+        width: 100%;
+        max-width: 85vw; /* Menggunakan 85% dari viewport width untuk mobile kecil */
+        min-width: 260px; /* Minimal ukuran yang layak */
+        aspect-ratio: 1/1; /* Memastikan card selalu square */
+        height: auto;
+        margin: 0 auto;
     }
 
     .certificate-content {
@@ -2728,4 +2756,18 @@ button:focus,
 
 #modalEmail:focus, #modalMessage:focus, #modalName:focus {
     outline: none !important;
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  .skill-card {
+    max-width: 100%;
+    padding: 1.2rem 0.5rem;
+    margin: 0;
+  }
 }

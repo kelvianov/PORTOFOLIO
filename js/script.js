@@ -38,31 +38,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutSection = document.getElementById("about");
   const typewriterSection = document.querySelectorAll(".typewriter");
   let isTyping = false;
-  let hasTypedOnce = false; // Track if animation has run once
   let typingIntervals = []; // Store all typing intervals
   let originalTexts = []; // Store original text content
+  let typingProgress = []; // Track progress for each paragraph
+  let isCompleted = false; // Track if all animations are completed
   
-  // Store original text content
+  // Store original text content and initialize progress
   typewriterSection.forEach((el, index) => {
     originalTexts[index] = el.innerHTML;
     el.innerHTML = "";
     el.style.visibility = "visible";
+    typingProgress[index] = 0; // Initialize progress for each paragraph
   });
   
   function startTypewriter() {
-    if (isTyping || hasTypedOnce) return; // Prevent multiple instances and re-runs
+    if (isTyping || isCompleted) return; // Prevent multiple instances, but allow resume if not completed
     isTyping = true;
-    hasTypedOnce = true; // Mark as having run once
     
+    // Find the first paragraph that hasn't completed typing
     let currentElementIndex = 0;
+    while (currentElementIndex < typewriterSection.length && 
+           typingProgress[currentElementIndex] === originalTexts[currentElementIndex].length) {
+      currentElementIndex++;
+    }
+    
+    // If all paragraphs are completed, don't restart
+    if (currentElementIndex >= typewriterSection.length) {
+      isCompleted = true;
+      return;
+    }
     
     function typeNextElement() {
       if (currentElementIndex >= typewriterSection.length || !isTyping) {
+        if (currentElementIndex >= typewriterSection.length) {
+          isCompleted = true; // Mark as fully completed
+        }
         return; // All elements typed or animation stopped
       }
       
       const el = typewriterSection[currentElementIndex];
       const fullText = originalTexts[currentElementIndex];
+      
+      // If this paragraph is already completed, move to next
+      if (typingProgress[currentElementIndex] >= fullText.length) {
+        currentElementIndex++;
+        typeNextElement();
+        return;
+      }
       
       // Parse HTML untuk mendapatkan struktur yang benar
       const tempDiv = document.createElement('div');
@@ -92,8 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
       
-      el.innerHTML = "";
-      let i = 0;
+      // Start from the last position for this paragraph
+      let i = typingProgress[currentElementIndex];
       
       const typing = setInterval(() => {
         if (i < textMap.length && isTyping) {
@@ -117,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
           
           el.innerHTML = currentHTML;
           i++;
+          typingProgress[currentElementIndex] = i; // Update progress
         } else {
           clearInterval(typing);
           
@@ -133,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
       typingIntervals.push(typing);
     }
     
-    // Start with first element
+    // Start with the current element that needs typing
     typeNextElement();
   }
   
@@ -154,10 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // User entered about section - start typewriter (only if hasn't run before)
+        // User entered about section - start/resume typewriter animation
         startTypewriter();
       } else {
-        // User left about section - stop typewriter but keep text
+        // User left about section - stop typewriter but keep progress
         stopTypewriter();
       }
     });
@@ -319,5 +342,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }//jangan di hapus
     });//jangan di hapus
   }//jangan di hapus
+  
+  // ================= HIDE CONTACT ME BUTTON ON CONTACT SECTION =================
+  const contactSection = document.getElementById('contact');
+  const openModalBtn = document.getElementById('openModalBtn');
+  if (contactSection && openModalBtn) {
+    const contactBtnObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          openModalBtn.style.display = 'none';
+        } else {
+          openModalBtn.style.display = '';
+        }
+      });
+    }, {
+      threshold: 0.2 // 20% of contact section visible triggers hide
+    });
+    contactBtnObserver.observe(contactSection);
+  }
   
   }); // end DOMContentLoaded
