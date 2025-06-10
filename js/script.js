@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     'img/sp4.jpg',
     'img/sp5.jpg',
     'img/sp6.jpg',
+    'img/sp7.jpg',
+    'img/sp8.jpg',
+    'img/sp9.jpg',
   ];
   
   let currentImageIndex = 0;
@@ -33,6 +36,29 @@ document.addEventListener("DOMContentLoaded", () => {
     currentImageIndex = (currentImageIndex + direction + certificateImages.length) % certificateImages.length;
     document.getElementById("modalImg").src = certificateImages[currentImageIndex];
   };
+  
+  // ================= KEYBOARD NAVIGATION FOR CERTIFICATE MODAL =================
+  document.addEventListener('keydown', function(event) {
+    const certificateModal = document.getElementById("certificateModal");
+    
+    // Only handle keyboard events when certificate modal is open
+    if (certificateModal.style.display === "block") {
+      switch(event.key) {
+        case 'ArrowLeft':
+          event.preventDefault();
+          changeImage(-1);
+          break;
+        case 'ArrowRight':
+          event.preventDefault();
+          changeImage(1);
+          break;
+        case 'Escape':
+          event.preventDefault();
+          closeModal();
+          break;
+      }
+    }
+  });
   
   // ================= TYPEWRITER ANIMATION =================
   const aboutSection = document.getElementById("about");
