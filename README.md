@@ -6,7 +6,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)
 
-**Live Website:** [https://portofolio-rho-azure.vercel.app/](https://portofolio-rho-azure.vercel.app/)
+**Live Website:** [https://portofolio-tau-lovat.vercel.app/](https://portofolio-tau-lovat.vercel.app/)
 
 ---
 
