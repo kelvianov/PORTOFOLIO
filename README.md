@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logooo.png" width="200" alt="KosKu Logo" />
+</p>
+
 # Kelvianov Putra Kesuma - Personal Portfolio Website
 
 ![Portfolio Preview](https://img.shields.io/badge/Portfolio-Live-brightgreen?style=for-the-badge&logo=vercel)
