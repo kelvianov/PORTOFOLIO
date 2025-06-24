@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logooo.png" width="200" alt="KosKu Logo" />
+  <img src="docs/personal-logo.png" width="200" alt="KosKu Logo" />
 </p>
 
 # Kelvianov Putra Kesuma - Personal Portfolio Website
