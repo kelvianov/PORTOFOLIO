@@ -111,9 +111,10 @@ Bandung, Indonesia
 
 ---
 
-## 📝 License
+## 📄 License
 
-This project is created for personal use and professional presentation. All rights reserved by Kelvianov Putra Kesuma.
+This project is licensed under the [MIT License](LICENSE).
+
 
 ---
 
